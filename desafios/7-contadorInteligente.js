@@ -3,7 +3,7 @@ const prompt = promptSync();
 
 /**
  * Desafio 6 – Contador Inteligente
- * Exibe uma contagem regressiva do número inicial até o final (por padrão, 0).
+ * Exibe uma contagem do número inicial até o final (por padrão, 0).
  * @param {number} inicio - Número inicial.
  * @returns {void}
  */

@@ -47,11 +47,19 @@ function testesParOuImpar() {
 	const esperado2 = 'Impar';
 	testar('impar', resultado2, esperado2);
 
+	const resultado3 = parOuImpar(0); // Deve retornar 'Par'
+	const esperado3 = 'Par';
+	testar('zero', resultado3, esperado3);
+
+	const resultado4 = parOuImpar(-3); // Deve retornar 'Impar'
+	const esperado4 = 'Impar';
+	testar('negativo', resultado4, esperado4);
+
 	// Opcionais
 	console.log('\nOpcionais:');
-	const resultado3 = parOuImpar('abc'); // Deve retornar mensagem de erro
-	const esperado3 = 'Entrada inválida. Digite um número válido.';
-	testar('de erro', resultado3, esperado3);
+	const resultado = parOuImpar('abc'); // Deve retornar mensagem de erro
+	const esperado = 'Entrada inválida. Digite um número válido.';
+	testar('de erro', resultado5, esperado5);
 }
 
 // ===== MAIOR OU MENOR =====
@@ -69,6 +77,10 @@ function testesMaiorOuMenor() {
 	const resultado3 = maiorOuMenor(7, 7);
 	const esperado3 = 'Os dois números são IGUAIS (7).';
 	testar('iguais', resultado3, esperado3);
+
+	const resultado4 = maiorOuMenor(-3, -1);
+	const esperado4 = 'O segundo número (-1) é MAIOR que o primeiro (-3).';
+	testar('números negativos', resultado4, esperado4);
 }
 
 // ===== CONVERSOR DE TEMPERATURA =====
@@ -157,15 +169,23 @@ function testesSistemaDeMedia() {
 	const esperado4 = 'Média: 9.4, Situação: Aprovado';
 	testar('mais de 3 notas', resultado4, esperado4);
 
-	// Teste 4: Notas inválidas
+	// Notas inválidas
 	const resultado5 = sistemaDeMedia(11, -1, 'abc');
 	const esperado5 = 'Erro: Todas as notas devem ser números.';
 	testar('erro de valor', resultado5, esperado5);
 
+	const resultado6 = sistemaDeMedia(8, -5, 7);
+	const esperado6 = 'Erro: Notas devem estar entre 0 e 10.';
+	testar('erro de nota negativa', resultado6, esperado6);
+
+	const resultado7 = sistemaDeMedia(5, 7, 15);
+	const esperado7 = 'Erro: Notas devem estar entre 0 e 10.';
+	testar('erro de intervalo', resultado7, esperado7);
+
 	// Teste 5: Sem notas
-	const resultado6 = sistemaDeMedia();
-	const esperado6 = 'Nenhuma nota informada.';
-	testar('erro de nenhuma nota', resultado6, esperado6);
+	const resultado8 = sistemaDeMedia();
+	const esperado8 = 'Nenhuma nota informada.';
+	testar('erro de nenhuma nota', resultado8, esperado8);
 }
 
 // ===== CALCULADORA INTERATIVA =====
@@ -231,9 +251,18 @@ function testesGeradorTabuada() {
 	// ...
 	// 5 x 10 = 50
 
+	console.log('\nTeste 2: número -3, limite padrão (10)');
+	geradorTabuada(-3);
+	// Saída esperada:
+	// Tabuada do -3 até 10:
+	// -3 x 1 = -3
+	// -3 x 2 = -6
+	// ...
+	// -3 x 10 = -30
+
 	// Opcionais
 	console.log('\nOpcionais:');
-	console.log('\nTeste 2: número 3, limite 5');
+	console.log('\nTeste 3: número 3, limite 5');
 	geradorTabuada(3, 5);
 	// Saída esperada:
 	// Tabuada do 3 até 5:
@@ -243,7 +272,7 @@ function testesGeradorTabuada() {
 	// 3 x 4 = 12
 	// 3 x 5 = 15
 
-	console.log('\nTeste 3: número 7, limite 0 (deve usar padrão 10)');
+	console.log('\nTeste 4: número 7, limite 0 (deve usar padrão 10)');
 	geradorTabuada(7, 0);
 	// Saída esperada:
 	// Tabuada do 7 até 10:
@@ -251,12 +280,20 @@ function testesGeradorTabuada() {
 	// ...
 	// 7 x 10 = 70
 
-	console.log('\nTeste 4: entrada inválida (numero = "a")');
+	console.log('\nTeste 5: número 2, limite -5 (deve usar padrão 10)');
+	geradorTabuada(2, -5);
+	// Saída esperada:
+	// Tabuada do 2 até 10:
+	// 2 x 1 = 2
+	// ...
+	// 2 x 10 = 20
+
+	console.log('\nTeste 6: entrada inválida (numero = "a")');
 	geradorTabuada('a', 5);
 	// Saída esperada:
 	// Erro: ambos os valores devem ser números válidos.
 
-	console.log('\nTeste 5: entrada inválida (limite = "b")');
+	console.log('\nTeste 7: entrada inválida (limite = "b")');
 	geradorTabuada(4, 'b');
 	// Saída esperada:
 	// Erro: ambos os valores devem ser números válidos.
@@ -277,9 +314,20 @@ function testesContadorInteligente() {
 	// 1
 	// 0
 
+	console.log('\nTeste 2: Contagem crescente padrão (-5 até 0, passo 1)');
+	contadorInteligente(-5);
+	// Saída esperada:
+	// Contagem de -5 até 0 de 1 em 1:
+	// -5
+	// -4
+	// -3
+	// -2
+	// -1
+	// 0
+
 	// Opcionais
 	console.log('\nOpcionais:');
-	console.log('\nTeste 2: Contagem crescente (0 até 5, passo 1)');
+	console.log('\nTeste 3: Contagem crescente (0 até 5, passo 1)');
 	contadorInteligente(0, 5);
 	// Saída esperada:
 	// Contagem de 0 até 5 de 1 em 1:
@@ -290,7 +338,7 @@ function testesContadorInteligente() {
 	// 4
 	// 5
 
-	console.log('\nTeste 3: Contagem regressiva com passo 2 (10 até 0)');
+	console.log('\nTeste 4: Contagem regressiva com passo 2 (10 até 0)');
 	contadorInteligente(10, 0, 2);
 	// Saída esperada:
 	// Contagem de 10 até 0 de 2 em 2:
@@ -301,7 +349,7 @@ function testesContadorInteligente() {
 	// 2
 	// 0
 
-	console.log('\nTeste 4: Contagem crescente com passo 3 (0 até 12)');
+	console.log('\nTeste 5: Contagem crescente com passo 3 (0 até 12)');
 	contadorInteligente(0, 12, 3);
 	// Saída esperada:
 	// Contagem de 0 até 12 de 3 em 3:
@@ -311,7 +359,7 @@ function testesContadorInteligente() {
 	// 9
 	// 12
 
-	console.log('\nTeste 5: Entrada inválida (string no lugar de número)');
+	console.log('\nTeste 6: Entrada inválida (string no lugar de número)');
 	contadorInteligente('a', 5);
 	// Saída esperada:
 	// Erro: todos os valores devem ser números válidos.
