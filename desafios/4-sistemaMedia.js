@@ -9,9 +9,6 @@ const prompt = promptSync();
  * @param {number} nota1 - Primeira nota numérica.
  * @param {number} nota2 - Segunda nota numérica.
  * @param {number} nota3 - Terceira nota numérica.
- * ou
- * @param {number} notas - Rest params de notas numéricas.
- *
  * @returns {string} - Mensagem com a média e a situação do aluno.
  */
 

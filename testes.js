@@ -57,8 +57,8 @@ function testesParOuImpar() {
 
 	// Opcionais
 	console.log('\nOpcionais:');
-	const resultado = parOuImpar('abc'); // Deve retornar mensagem de erro
-	const esperado = 'Entrada inválida. Digite um número válido.';
+	const resultado5 = parOuImpar('abc'); // Deve retornar mensagem de erro
+	const esperado5 = 'Entrada inválida. Digite um número válido.';
 	testar('de erro', resultado5, esperado5);
 }
 
@@ -272,21 +272,15 @@ function testesGeradorTabuada() {
 	// 3 x 4 = 12
 	// 3 x 5 = 15
 
-	console.log('\nTeste 4: número 7, limite 0 (deve usar padrão 10)');
+	console.log('\nTeste 4: número 7, limite 0');
 	geradorTabuada(7, 0);
 	// Saída esperada:
-	// Tabuada do 7 até 10:
-	// 7 x 1 = 7
-	// ...
-	// 7 x 10 = 70
+	// Erro: ambos os valores devem ser números válidos.
 
-	console.log('\nTeste 5: número 2, limite -5 (deve usar padrão 10)');
+	console.log('\nTeste 5: número 2, limite -5');
 	geradorTabuada(2, -5);
 	// Saída esperada:
-	// Tabuada do 2 até 10:
-	// 2 x 1 = 2
-	// ...
-	// 2 x 10 = 20
+	// Erro: ambos os valores devem ser números válidos.
 
 	console.log('\nTeste 6: entrada inválida (numero = "a")');
 	geradorTabuada('a', 5);

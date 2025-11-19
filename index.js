@@ -21,6 +21,7 @@ import { jogoAdivinhacaoPrompt } from './desafios/9-jogoAdivinhacao.js';
 // ===== MENU PRINCIPAL =====
 // ========================
 function exibirMenu() {
+	console.clear();
 	console.log(`
 === DESAFIOS LÓGICOS ===
 1. Teste de Par ou Ímpar

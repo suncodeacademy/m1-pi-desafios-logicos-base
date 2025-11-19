@@ -4,7 +4,7 @@ const prompt = promptSync();
 /**
  * Desafio 9 – Jogo de Adivinhação
  * O computador escolhe um número secreto e o jogador precisa acertá-lo.
- * @return {void}
+ * @returns {void}
  */
 export function jogoAdivinhacao() {
 	// Implemente sua solução aqui (opcional)
